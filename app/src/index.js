@@ -8,6 +8,7 @@ import Garage from './components/props/Props';
 import Football from './components/events/Event';
 import Timer from './components/timer/timer';
 
+
 /*
 Verify that the components inside are following some of the recommended practices and warn you if not in the console.
 Verify the deprecated methods are not being used, and if they're used strict mode will warn you in the console.
@@ -17,29 +18,7 @@ Help you prevent some side effects by identifying potential risks.
   </React.StrictMode>,
 */
 
-setInterval(Timer, 3000);
-
-
-class Clock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { date: new Date() };
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>Show {this.state.date.toLocaleTimeString()}.</h2>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+setInterval(Timer.tick, 3000);
 
 
 class NameForm extends React.Component {
@@ -79,7 +58,7 @@ ReactDOM.render(
     <Football />
     <Garage />
     <App />
-    <Clock />
+    <Timer.Clock />
     <Dust.element />
   </React.StrictMode>,
   document.getElementById('root')
