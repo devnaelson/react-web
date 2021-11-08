@@ -7,6 +7,7 @@ import Dust from './components/compApp/Dust';
 import Garage from './components/props/Props';
 import Football from './components/events/Event';
 import Timer from './components/timer/timer';
+import Form from './components/forms/form';
 
 
 /*
@@ -21,40 +22,9 @@ Help you prevent some side effects by identifying potential risks.
 setInterval(Timer.tick, 3000);
 
 
-class NameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '' };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-    );
-  }
-}
-
 ReactDOM.render(
   <React.StrictMode>
-    <NameForm />
+    <Form />
     <Football />
     <Garage />
     <App />
